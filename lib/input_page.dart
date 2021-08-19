@@ -44,7 +44,9 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     child: ReusableCard(
-                      color: selectedGender == GenderType.male ? activeCardColor : inActiveCardColor,
+                      color: selectedGender == GenderType.male
+                          ? activeCardColor
+                          : inActiveCardColor,
                       cardChild: ReusableGender(FontAwesomeIcons.mars, 'Male'),
                     ),
                   ),
@@ -57,7 +59,9 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     child: ReusableCard(
-                      color: selectedGender == GenderType.female ? activeCardColor : inActiveCardColor,
+                      color: selectedGender == GenderType.female
+                          ? activeCardColor
+                          : inActiveCardColor,
                       cardChild:
                           ReusableGender(FontAwesomeIcons.venus, 'Female'),
                     ),
