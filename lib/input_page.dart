@@ -8,7 +8,9 @@ import 'main.dart';
 
 const double bottomContHeight = 60;
 const activeCardColor = Color(0xFF1D1E33);
+const inActiveCardColor = Color(0xFF111328);
 const bottomContainerColor = Color(0xFFEB1555);
+enum GenderType { male, female }
 
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
@@ -18,6 +20,10 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  GenderType? selectedGender;
+  Color maleCardColor = inActiveCardColor;
+  Color femaleCardColor = inActiveCardColor;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,15 +37,30 @@ class _InputPageState extends State<InputPage> {
                 child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(
-                    color: activeCardColor,
-                    cardChild: ReusableGender(FontAwesomeIcons.mars, 'male'),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedGender = GenderType.male;
+                      });
+                    },
+                    child: ReusableCard(
+                      color: selectedGender == GenderType.male ? activeCardColor : inActiveCardColor,
+                      cardChild: ReusableGender(FontAwesomeIcons.mars, 'Male'),
+                    ),
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(
-                    color: activeCardColor,
-                    cardChild: ReusableGender(FontAwesomeIcons.venus, 'female'),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedGender = GenderType.female;
+                      });
+                    },
+                    child: ReusableCard(
+                      color: selectedGender == GenderType.female ? activeCardColor : inActiveCardColor,
+                      cardChild:
+                          ReusableGender(FontAwesomeIcons.venus, 'Female'),
+                    ),
                   ),
                 )
               ],
