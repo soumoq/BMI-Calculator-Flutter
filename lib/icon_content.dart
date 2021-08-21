@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-const labelTextStyle = TextStyle(
-  fontSize: 18,
-  color: Color(0xFF8D8E98),
-);
+import 'constants.dart';
+
+
 
 class ReusableGender extends StatelessWidget {
   ReusableGender(this.iconData, this.genderName);
@@ -23,7 +22,7 @@ class ReusableGender extends StatelessWidget {
         SizedBox(
           height: 15,
         ),
-        Text(genderName, style: labelTextStyle)
+        Text(genderName, style: KLabelTextStyle)
       ],
     );
   }
