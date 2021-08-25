@@ -6,7 +6,14 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class ResultPage extends StatelessWidget {
-  const ResultPage({Key? key}) : super(key: key);
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
+  ResultPage(
+      {required this.bmiResult,
+      required this.resultText,
+      required this.interpretation});
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +44,15 @@ class ResultPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'Normal',
+                      resultText.toUpperCase(),
                       style: KResultTextStyle,
                     ),
                     Text(
-                      '18.3',
+                      bmiResult,
                       style: KBMITextStyle,
                     ),
                     Text(
-                      'Your BMI result is low you should eat more',
+                      interpretation,
                       textAlign: TextAlign.center,
                       style: KBodyTextStyle,
                     ),
@@ -58,7 +65,6 @@ class ResultPage extends StatelessWidget {
                 onPress: () {
                   Navigator.pop(context);
                 })
-
           ],
         ));
   }
