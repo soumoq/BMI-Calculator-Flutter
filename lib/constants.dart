@@ -21,3 +21,23 @@ const KLergeButtonTextStyle = TextStyle(
   fontSize: 25,
   fontWeight: FontWeight.bold
 );
+
+const kTitletextStyle = TextStyle(
+  fontSize: 50,
+  fontWeight: FontWeight.bold
+);
+
+const KResultTextStyle = TextStyle(
+  color: Color(0xFF24D876),
+  fontSize: 22,
+  fontWeight: FontWeight.bold
+);
+
+const KBMITextStyle = TextStyle(
+    fontSize: 100,
+    fontWeight: FontWeight.bold
+);
+
+const KBodyTextStyle = TextStyle(
+    fontSize: 22
+);
