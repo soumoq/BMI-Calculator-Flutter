@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 const double KBottomContHeight = 60;
 const KActiveCardColor = Color(0xFF1D1E33);
@@ -16,3 +17,7 @@ const KNumberTextStyle = TextStyle(
     fontWeight: FontWeight.w900,
 );
 
+const KLergeButtonTextStyle = TextStyle(
+  fontSize: 25,
+  fontWeight: FontWeight.bold
+);
